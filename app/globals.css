@@ -1,26 +1,70 @@
-@import "tailwindcss";
+/* app/globals.css */
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-haxia-orange: #FF8500;
+  --color-haxia-hover: #E07500;
+  --color-haxia-dark: #121212;
+  --color-haxia-slate: #1f2937;
+
+  --font-sans: var(--font-sans), system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-white text-haxia-slate antialiased;
+  font-feature-settings: 'liga' 1, 'kern' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  @apply border-haxia-slate/10;
+}
+
+::selection {
+  @apply bg-haxia-orange/20 text-haxia-dark;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-white;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-haxia-orange/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-haxia-hover;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-haxia-dark font-bold tracking-tight;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .container-section {
+    @apply mx-auto max-w-7xl px-6 py-20 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-haxia-orange px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-haxia-hover;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-haxia-slate/20 bg-white px-6 py-3 text-sm font-semibold text-haxia-slate transition-colors duration-200 hover:border-haxia-orange hover:text-haxia-orange;
+  }
 }
