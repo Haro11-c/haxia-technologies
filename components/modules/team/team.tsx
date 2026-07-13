@@ -1,4 +1,4 @@
-// components/sections/team.tsx
+// components/modules/team/team.tsx
 import Image from 'next/image';
 import { team } from '@/data/team';
 
@@ -22,16 +22,16 @@ const SOCIAL_ICONS = {
 
 export default function Team() {
   return (
-    <section id="team" className="relative bg-haxia-slate/[0.02] py-24 lg:py-32">
+    <section id="team" className="relative bg-haxia-slate/[0.02] py-24 lg:py-32 dark:bg-white/[0.02]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-wider text-haxia-orange">
             Our People
           </span>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-haxia-dark sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-haxia-dark sm:text-4xl dark:text-white">
             Meet the Leadership
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-haxia-slate/70">
+          <p className="mt-4 text-base leading-relaxed text-haxia-slate/70 dark:text-white/60">
             A senior team with hands-on experience shipping production
             software across engineering, design, and infrastructure.
           </p>
@@ -41,9 +41,9 @@ export default function Team() {
           {team.map((member) => (
             <div
               key={member.id}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-haxia-slate/10 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-haxia-orange/30 hover:shadow-lg hover:shadow-haxia-orange/5"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-haxia-slate/10 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-haxia-orange/30 hover:shadow-lg hover:shadow-haxia-orange/5 dark:border-white/10 dark:bg-neutral-900"
             >
-              <div className="relative aspect-[4/5] w-full overflow-hidden bg-haxia-slate/5">
+              <div className="relative aspect-[4/5] w-full overflow-hidden bg-haxia-slate/5 dark:bg-white/5">
                 <Image
                   src={member.image.src}
                   alt={member.image.alt}
@@ -54,21 +54,21 @@ export default function Team() {
               </div>
 
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-base font-bold text-haxia-dark">
+                <h3 className="text-base font-bold text-haxia-dark dark:text-white">
                   {member.name}
                 </h3>
                 <p className="mt-0.5 text-sm font-medium text-haxia-orange">
                   {member.title}
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-haxia-slate/60">
+                <p className="mt-3 text-sm leading-relaxed text-haxia-slate/60 dark:text-white/50">
                   {member.bio}
                 </p>
 
-                <div className="mt-5 flex flex-wrap gap-2 border-t border-haxia-slate/10 pt-4">
+                <div className="mt-5 flex flex-wrap gap-2 border-t border-haxia-slate/10 pt-4 dark:border-white/10">
                   {member.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="inline-flex items-center rounded-md bg-haxia-orange/5 px-2.5 py-1 text-xs font-medium text-haxia-orange"
+                      className="inline-flex items-center rounded-md bg-haxia-orange/5 px-2.5 py-1 text-xs font-medium text-haxia-orange dark:bg-haxia-orange/15"
                     >
                       {skill}
                     </span>
@@ -87,7 +87,8 @@ export default function Team() {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={`${member.name} on ${platform}`}
-                          className="flex h-8 w-8 items-center justify-center rounded-lg bg-haxia-slate/5 text-haxia-slate/60 transition-colors duration-200 hover:bg-haxia-orange hover:text-white">
+                          className="flex h-8 w-8 items-center justify-center rounded-lg bg-haxia-slate/5 text-haxia-slate/60 transition-colors duration-200 hover:bg-haxia-orange hover:text-white dark:bg-white/5 dark:text-white/50"
+                        >
                           {icon}
                         </a>
                       );

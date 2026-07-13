@@ -126,16 +126,16 @@ export default function ServicesPage() {
   return (
     <>
       {/* Page header */}
-      <section className="relative bg-white pb-16 pt-20 lg:pb-20 lg:pt-28">
+      <section className="relative bg-white pb-16 pt-20 lg:pb-20 lg:pt-28 dark:bg-haxia-dark">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-semibold uppercase tracking-wider text-haxia-orange">
               What We Do
             </span>
-            <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-haxia-dark sm:text-5xl">
+            <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-haxia-dark sm:text-5xl dark:text-white">
               Our Services
             </h1>
-            <p className="mt-4 text-base leading-relaxed text-haxia-slate/70">
+            <p className="mt-4 text-base leading-relaxed text-haxia-slate/70 dark:text-white/60">
               End-to-end technical services covering the full lifecycle of
               your product — from first line of code to production scale.
             </p>
@@ -144,28 +144,30 @@ export default function ServicesPage() {
       </section>
 
       {/* Service detail blocks */}
-      <section className="bg-white pb-24 lg:pb-32">
+      <section className="bg-white pb-24 lg:pb-32 dark:bg-haxia-dark">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="space-y-16">
             {SERVICES.map((service, index) => (
               <div
                 key={service.slug}
                 id={service.slug}
-                className={`grid grid-cols-1 gap-10 rounded-2xl border border-haxia-slate/10 p-8 lg:grid-cols-5 lg:gap-12 lg:p-12 ${
-                  index % 2 === 0 ? 'bg-white' : 'bg-haxia-slate/[0.02]'
+                className={`grid grid-cols-1 gap-10 rounded-2xl border border-haxia-slate/10 p-8 lg:grid-cols-5 lg:gap-12 lg:p-12 dark:border-white/10 ${
+                  index % 2 === 0
+                    ? 'bg-white dark:bg-haxia-dark'
+                    : 'bg-haxia-slate/[0.02] dark:bg-white/[0.02]'
                 }`}
               >
                 <div className="lg:col-span-2">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-haxia-orange/10">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-haxia-orange/10 dark:bg-haxia-orange/15">
                     {service.icon}
                   </div>
-                  <h2 className="mt-5 text-2xl font-bold text-haxia-dark">
+                  <h2 className="mt-5 text-2xl font-bold text-haxia-dark dark:text-white">
                     {service.title}
                   </h2>
                   <p className="mt-3 text-sm font-medium text-haxia-orange">
                     {service.summary}
                   </p>
-                  <p className="mt-4 text-sm leading-relaxed text-haxia-slate/70">
+                  <p className="mt-4 text-sm leading-relaxed text-haxia-slate/70 dark:text-white/60">
                     {service.description}
                   </p>
 
@@ -173,7 +175,7 @@ export default function ServicesPage() {
                     {service.deliverables.map((item) => (
                       <li
                         key={item}
-                        className="flex items-start gap-2 text-sm text-haxia-slate/70"
+                        className="flex items-start gap-2 text-sm text-haxia-slate/70 dark:text-white/60"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -194,22 +196,22 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="lg:col-span-3">
-                  <h3 className="text-sm font-semibold uppercase tracking-wider text-haxia-slate/60">
+                  <h3 className="text-sm font-semibold uppercase tracking-wider text-haxia-slate/60 dark:text-white/40">
                     Our Process
                   </h3>
                   <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
                     {service.process.map((phase, phaseIndex) => (
                       <div
                         key={phase.step}
-                        className="rounded-xl border border-haxia-slate/10 bg-white p-5"
+                        className="rounded-xl border border-haxia-slate/10 bg-white p-5 dark:border-white/10 dark:bg-neutral-900"
                       >
                         <span className="text-xs font-bold text-haxia-orange">
                           Step {phaseIndex + 1}
                         </span>
-                        <h4 className="mt-1 text-base font-bold text-haxia-dark">
+                        <h4 className="mt-1 text-base font-bold text-haxia-dark dark:text-white">
                           {phase.step}
                         </h4>
-                        <p className="mt-2 text-sm leading-relaxed text-haxia-slate/60">
+                        <p className="mt-2 text-sm leading-relaxed text-haxia-slate/60 dark:text-white/50">
                           {phase.detail}
                         </p>
                       </div>
@@ -222,7 +224,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA banner */}
+      {/* CTA banner — already dark by design, no change needed */}
       <section className="bg-haxia-dark py-20">
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">

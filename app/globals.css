@@ -1,13 +1,13 @@
 /* app/globals.css */
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-haxia-orange: #FF8500;
   --color-haxia-hover: #E07500;
   --color-haxia-dark: #121212;
   --color-haxia-slate: #1f2937;
-
-  --font-sans: var(--font-sans), system-ui, sans-serif;
 }
 
 html {
@@ -15,14 +15,14 @@ html {
 }
 
 body {
-  @apply bg-white text-haxia-slate antialiased;
+  @apply bg-white text-haxia-slate antialiased transition-colors duration-300 dark:bg-haxia-dark dark:text-white/80;
   font-feature-settings: 'liga' 1, 'kern' 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 * {
-  @apply border-haxia-slate/10;
+  @apply border-haxia-slate/10 dark:border-white/10;
 }
 
 ::selection {
@@ -34,7 +34,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-white;
+  @apply bg-white dark:bg-haxia-dark;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -47,7 +47,7 @@ body {
 
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    @apply text-haxia-dark font-bold tracking-tight;
+    @apply text-haxia-dark font-bold tracking-tight dark:text-white;
   }
 
   a {
@@ -65,6 +65,6 @@ body {
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-lg border border-haxia-slate/20 bg-white px-6 py-3 text-sm font-semibold text-haxia-slate transition-colors duration-200 hover:border-haxia-orange hover:text-haxia-orange;
+    @apply inline-flex items-center justify-center rounded-lg border border-haxia-slate/20 bg-white px-6 py-3 text-sm font-semibold text-haxia-slate transition-colors duration-200 hover:border-haxia-orange hover:text-haxia-orange dark:bg-transparent dark:border-white/20 dark:text-white/80;
   }
 }

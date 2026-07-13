@@ -1,4 +1,4 @@
-// components/sections/portfolio.tsx
+// components/modules/portfolio/portfolio.tsx
 'use client';
 
 import { useState, useMemo } from 'react';
@@ -42,16 +42,16 @@ export default function Portfolio() {
   );
 
   return (
-    <section id="portfolio" className="relative bg-white py-24 lg:py-32">
+    <section id="portfolio" className="relative bg-white py-24 lg:py-32 dark:bg-haxia-dark">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-wider text-haxia-orange">
             Our Work
           </span>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-haxia-dark sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-haxia-dark sm:text-4xl dark:text-white">
             Selected Projects
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-haxia-slate/70">
+          <p className="mt-4 text-base leading-relaxed text-haxia-slate/70 dark:text-white/60">
             A snapshot of platforms and products we have engineered for
             clients across search, enterprise tooling, and commerce.
           </p>
@@ -68,7 +68,7 @@ export default function Portfolio() {
                 className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-200 ${
                   isActive
                     ? 'bg-haxia-orange text-white shadow-sm shadow-haxia-orange/30'
-                    : 'bg-haxia-slate/5 text-haxia-slate hover:bg-haxia-orange/10 hover:text-haxia-orange'
+                    : 'bg-haxia-slate/5 text-haxia-slate hover:bg-haxia-orange/10 hover:text-haxia-orange dark:bg-white/5 dark:text-white/70 dark:hover:bg-haxia-orange/15'
                 }`}
               >
                 {category}
@@ -82,9 +82,9 @@ export default function Portfolio() {
             <Link
               key={project.id}
               href={`/portfolio/${project.slug}`}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-haxia-slate/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-haxia-orange/30 hover:shadow-lg hover:shadow-haxia-orange/5"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-haxia-slate/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-haxia-orange/30 hover:shadow-lg hover:shadow-haxia-orange/5 dark:border-white/10 dark:bg-neutral-900"
             >
-              <div className="relative aspect-[3/2] w-full overflow-hidden bg-haxia-slate/5">
+              <div className="relative aspect-[3/2] w-full overflow-hidden bg-haxia-slate/5 dark:bg-white/5">
                 <Image
                   src={project.image.src}
                   alt={project.image.alt}
@@ -93,21 +93,21 @@ export default function Portfolio() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute left-4 top-4">
-                  <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-haxia-slate backdrop-blur-sm">
+                  <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-haxia-slate backdrop-blur-sm dark:bg-black/70 dark:text-white/80">
                     {project.category}
                   </span>
                 </div>
               </div>
 
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-lg font-bold text-haxia-dark transition-colors duration-200 group-hover:text-haxia-orange">
+                <h3 className="text-lg font-bold text-haxia-dark transition-colors duration-200 group-hover:text-haxia-orange dark:text-white">
                   {project.title}
                 </h3>
-                <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-haxia-slate/60">
+                <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-haxia-slate/60 dark:text-white/50">
                   {project.description}
                 </p>
 
-                <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-haxia-slate/10 pt-5">
+                <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-haxia-slate/10 pt-5 dark:border-white/10">
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
@@ -123,8 +123,8 @@ export default function Portfolio() {
         </div>
 
         {filteredProjects.length === 0 && (
-          <div className="mt-14 rounded-2xl border border-dashed border-haxia-slate/20 py-16 text-center">
-            <p className="text-sm text-haxia-slate/60">
+          <div className="mt-14 rounded-2xl border border-dashed border-haxia-slate/20 py-16 text-center dark:border-white/20">
+            <p className="text-sm text-haxia-slate/60 dark:text-white/50">
               No projects found in this category yet.
             </p>
           </div>
@@ -133,7 +133,7 @@ export default function Portfolio() {
         <div className="mt-14 text-center">
           <Link
             href="/portfolio"
-            className="inline-flex items-center justify-center gap-2 rounded-lg border border-haxia-slate/20 bg-white px-6 py-3 text-sm font-semibold text-haxia-slate transition-colors duration-200 hover:border-haxia-orange hover:text-haxia-orange"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-haxia-slate/20 bg-white px-6 py-3 text-sm font-semibold text-haxia-slate transition-colors duration-200 hover:border-haxia-orange hover:text-haxia-orange dark:border-white/20 dark:bg-transparent dark:text-white/80"
           >
             View Full Portfolio
             <svg

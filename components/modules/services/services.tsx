@@ -1,4 +1,4 @@
-// components/sections/services.tsx
+// components/modules/services/services.tsx
 
 interface Service {
   title: string;
@@ -121,17 +121,17 @@ const SERVICES: Service[] = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative bg-haxia-slate/[0.02] py-24 lg:py-32">
+    <section id="services" className="relative bg-haxia-slate/[0.02] py-24 lg:py-32 dark:bg-white/[0.02]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-wider text-haxia-orange">
             What We Do
           </span>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-haxia-dark sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-haxia-dark sm:text-4xl dark:text-white">
             Core Capabilities
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-haxia-slate/70">
+          <p className="mt-4 text-base leading-relaxed text-haxia-slate/70 dark:text-white/60">
             End-to-end technical services covering the full lifecycle of your
             product — from first line of code to production scale.
           </p>
@@ -142,27 +142,27 @@ export default function Services() {
           {SERVICES.map((service) => (
             <div
               key={service.title}
-              className="group relative flex flex-col rounded-2xl border border-haxia-slate/10 bg-white p-7 transition-all duration-200 hover:-translate-y-1 hover:border-haxia-orange/30 hover:shadow-lg hover:shadow-haxia-orange/5"
+              className="group relative flex flex-col rounded-2xl border border-haxia-slate/10 bg-white p-7 transition-all duration-200 hover:-translate-y-1 hover:border-haxia-orange/30 hover:shadow-lg hover:shadow-haxia-orange/5 dark:border-white/10 dark:bg-neutral-900"
             >
               {/* Icon */}
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-haxia-orange/10 transition-colors duration-200 group-hover:bg-haxia-orange/15">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-haxia-orange/10 transition-colors duration-200 group-hover:bg-haxia-orange/15 dark:bg-haxia-orange/15 dark:group-hover:bg-haxia-orange/25">
                 {service.icon}
               </div>
 
               {/* Title & description */}
-              <h3 className="text-lg font-bold text-haxia-dark">
+              <h3 className="text-lg font-bold text-haxia-dark dark:text-white">
                 {service.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-haxia-slate/60">
+              <p className="mt-2 text-sm leading-relaxed text-haxia-slate/60 dark:text-white/50">
                 {service.description}
               </p>
 
               {/* Bullets */}
-              <ul className="mt-5 space-y-2.5 border-t border-haxia-slate/10 pt-5">
+              <ul className="mt-5 space-y-2.5 border-t border-haxia-slate/10 pt-5 dark:border-white/10">
                 {service.bullets.map((bullet) => (
                   <li
                     key={bullet}
-                    className="flex items-start gap-2 text-sm text-haxia-slate/70"
+                    className="flex items-start gap-2 text-sm text-haxia-slate/70 dark:text-white/60"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

@@ -1,4 +1,4 @@
-// components/sections/contact-form.tsx
+// components/modules/contact/contact-form.tsx
 'use client';
 
 import { useState, type FormEvent } from 'react';
@@ -62,29 +62,29 @@ export default function ContactForm() {
   };
 
   const inputBaseClasses =
-    'w-full rounded-lg border border-haxia-slate/20 bg-white px-4 py-3 text-sm text-haxia-dark placeholder:text-haxia-slate/40 transition-colors duration-200 focus:border-haxia-orange focus:outline-none focus:ring-4 focus:ring-haxia-orange/10';
+    'w-full rounded-lg border border-haxia-slate/20 bg-white px-4 py-3 text-sm text-haxia-dark placeholder:text-haxia-slate/40 transition-colors duration-200 focus:border-haxia-orange focus:outline-none focus:ring-4 focus:ring-haxia-orange/10 dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-white/30';
 
   return (
-    <section id="contact" className="relative bg-white py-24 lg:py-32">
+    <section id="contact" className="relative bg-white py-24 lg:py-32 dark:bg-haxia-dark">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-wider text-haxia-orange">
             Get In Touch
           </span>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-haxia-dark sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-haxia-dark sm:text-4xl dark:text-white">
             Let&apos;s Build Something Reliable
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-haxia-slate/70">
+          <p className="mt-4 text-base leading-relaxed text-haxia-slate/70 dark:text-white/60">
             Tell us about your project and our team will get back to you
             within one business day.
           </p>
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-5 lg:gap-16">
-          {/* Left: office & contact info */}
+          {/* Left: office & contact info — already dark by design, no change needed */}
           <div className="lg:col-span-2">
-            <div className="rounded-2xl border border-haxia-slate/10 bg-haxia-dark p-8 text-white">
+            <div className="rounded-2xl border border-haxia-slate/10 bg-haxia-dark p-8 text-white dark:border-white/10">
               <h3 className="text-lg font-bold">Our Offices</h3>
               <div className="mt-6 space-y-6">
                 {OFFICES.map((office) => (
@@ -161,13 +161,13 @@ export default function ContactForm() {
           <div className="lg:col-span-3">
             <form
               onSubmit={handleSubmit}
-              className="rounded-2xl border border-haxia-slate/10 bg-white p-8 shadow-sm"
+              className="rounded-2xl border border-haxia-slate/10 bg-white p-8 shadow-sm dark:border-white/10 dark:bg-neutral-900"
             >
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div>
                   <label
                     htmlFor="firstName"
-                    className="mb-2 block text-sm font-semibold text-haxia-dark"
+                    className="mb-2 block text-sm font-semibold text-haxia-dark dark:text-white"
                   >
                     First Name
                   </label>
@@ -186,7 +186,7 @@ export default function ContactForm() {
                 <div>
                   <label
                     htmlFor="lastName"
-                    className="mb-2 block text-sm font-semibold text-haxia-dark"
+                    className="mb-2 block text-sm font-semibold text-haxia-dark dark:text-white"
                   >
                     Last Name
                   </label>
@@ -206,7 +206,7 @@ export default function ContactForm() {
               <div className="mt-6">
                 <label
                   htmlFor="email"
-                  className="mb-2 block text-sm font-semibold text-haxia-dark"
+                  className="mb-2 block text-sm font-semibold text-haxia-dark dark:text-white"
                 >
                   Email Address
                 </label>
@@ -225,7 +225,7 @@ export default function ContactForm() {
               <div className="mt-6">
                 <label
                   htmlFor="projectDetails"
-                  className="mb-2 block text-sm font-semibold text-haxia-dark"
+                  className="mb-2 block text-sm font-semibold text-haxia-dark dark:text-white"
                 >
                   Project Details
                 </label>
@@ -250,13 +250,13 @@ export default function ContactForm() {
               </button>
 
               {status === 'success' && (
-                <p className="mt-4 text-sm font-medium text-green-600">
+                <p className="mt-4 text-sm font-medium text-green-600 dark:text-green-400">
                   Thanks — your message has been sent. We&apos;ll be in touch
                   shortly.
                 </p>
               )}
               {status === 'error' && (
-                <p className="mt-4 text-sm font-medium text-red-600">
+                <p className="mt-4 text-sm font-medium text-red-600 dark:text-red-400">
                   Something went wrong. Please try again or email us
                   directly.
                 </p>
