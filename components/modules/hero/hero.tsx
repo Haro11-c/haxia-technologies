@@ -25,10 +25,10 @@ export default function Hero() {
           {/* Left column: copy */}
           <div className="animate-slide-up lg:col-span-7">
             <div className="inline-flex items-center gap-2 rounded-full border border-haxia-orange/20 bg-haxia-orange/5 px-4 py-1.5 dark:bg-haxia-orange/10">
-              <span className="relative flex h-2 w-2">
+              {/* <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-haxia-orange opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-haxia-orange" />
-              </span>
+              </span> */}
               <span className="text-xs font-semibold uppercase tracking-wider text-haxia-orange">
                 Enterprise Software Partner
               </span>

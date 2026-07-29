@@ -4,7 +4,7 @@ export interface Project {
   id: string;
   slug: string;
   title: string;
-  category: 'Web Application' | 'Search Engine' | 'Dashboard' | 'Mobile App' | 'E-Commerce';
+  category: 'Web Application' | 'Search Engine' | 'Dashboard' | 'Mobile App' | 'E-Commerce'| 'News Portal'|'Machine Learning';
   description: string;
   longDescription?: string;
   tags: string[];
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     tags: ['Search', 'Full-Stack', 'AI-Ready'],
     techStack: ['Next.js', 'MongoDB', 'Node.js', 'TypeScript', 'Redis'],
     image: {
-      src: '/projects/portfolioimage.jpg',
+      src: '/projects/searchengineui.png',
       alt: 'GooTiraa Search Engine dashboard preview',
       width: 1200,
       height: 800,
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     tags: ['Dashboard', 'Enterprise', 'Analytics'],
     techStack: ['Next.js', 'PostgreSQL', 'Prisma', 'TypeScript', 'Tailwind CSS'],
     image: {
-      src: '/projects/portfolioimage.jpg',
+      src: '/projects/admindashboard.png',
       alt: 'Haburu Admin Dashboard overview screen',
       width: 1200,
       height: 800,
@@ -68,48 +68,48 @@ export const projects: Project[] = [
     year: 2024,
     featured: true,
   },
-  {
-    id: '3',
-    slug: 'sanyata-ecommerce-platform',
-    title: 'Sanyata E-Commerce Platform',
-    category: 'E-Commerce',
-    description:
-      'A modern, scalable online storefront featuring dynamic product catalogs, secure checkout, and vendor management.',
-    longDescription:
-      'Sanyata is a multi-vendor e-commerce solution built for scale, supporting dynamic inventory management, integrated payment gateways, and a responsive shopping experience optimized for conversion.',
-    tags: ['E-Commerce', 'Multi-Vendor', 'Payments'],
-    techStack: ['Next.js', 'Stripe', 'MongoDB', 'TypeScript', 'Tailwind CSS'],
-    image: {
-      src: '/projects/portfolioimage.jpg',
-      alt: 'Sanyata E-Commerce Platform storefront preview',
-      width: 1200,
-      height: 800,
-    },
-    liveUrl: 'https://sanyata.haxia.tech',
-    year: 2024,
-    featured: false,
+ {
+  id: '3',
+  slug: 'iesport-news',
+  title: 'IeSport News',
+  category: 'News Portal',
+  description:
+    'A high-performance, real-time e-sports news portal delivering dynamic tournament coverage, live score updates, interactive leaderboard tracking, and rich editorial media.',
+  longDescription:
+    'IeSport News is an enterprise-grade digital media and news platform custom-built for the fast-paced competitive gaming ecosystem. Engineered for high-concurrency traffic and rapid content delivery, the platform features a dynamic CMS for editorial workflows, real-time tournament schedule synchronization, categorized article filtering by game titles, and personalized reader bookmarking. Utilizing SSR and ISR strategies for near-instant page load speeds and SEO dominance, it provides a seamless, media-rich reading experience optimized for both mobile and desktop users.',
+  tags: ['E-Sports', 'News Portal', 'Real-Time Content', 'Media CMS', 'SSR'],
+  techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'Redis'],
+  image: {
+    src: '/projects/iesport admin.png',
+    alt: 'IeSport News platform preview showing dynamic sports editorial layout and tournament feeds',
+    width: 1200,
+    height: 800,
   },
+  liveUrl: 'https://iesport.haxia.tech',
+  year: 2024,
+  featured: true,
+},
   {
-    id: '4',
-    slug: 'wabii-mobile-banking-app',
-    title: 'Wabii Mobile Banking App',
-    category: 'Mobile App',
-    description:
-      'A secure cross-platform mobile banking application supporting transfers, bill payments, and account management.',
-    longDescription:
-      'Wabii brings core banking functionality to a native-quality mobile experience, built with React Native and hardened with biometric authentication, encrypted local storage, and real-time transaction syncing.',
-    tags: ['Mobile', 'FinTech', 'Security'],
-    techStack: ['React Native', 'Node.js', 'PostgreSQL', 'TypeScript'],
-    image: {
-      src: '/projects/portfolioimage.jpg',
-      alt: 'Wabii Mobile Banking App interface preview',
-      width: 1200,
-      height: 800,
-    },
-    liveUrl: 'https://wabii.haxia.tech',
-    year: 2025,
-    featured: true,
+  id: '4',
+  slug: 'house-price-prediction',
+  title: 'House Price Prediction',
+  category: 'Machine Learning',
+  description:
+    'An end-to-end predictive analytics web application that estimates real estate market valuations using machine learning models trained on historical property data.',
+  longDescription:
+    'A robust data science platform designed to forecast property values by analyzing key features like location, square footage, amenities, and market trends. The pipeline integrates exploratory data analysis, feature engineering, and ensemble regression algorithms (such as XGBoost and Random Forest) wrapped in an interactive dashboard for instant property valuation and market insights.',
+  tags: ['Machine Learning', 'Predictive Analytics', 'Data Science', 'Real Estate'],
+  techStack: ['Python', 'Scikit-Learn', 'XGBoost', 'Pandas', 'Flask', 'React', 'Tailwind CSS'],
+  image: {
+    src: '/projects/house-price-prediction.png',
+    alt: 'House Price Prediction dashboard showcasing real estate valuation metrics and analytics graphs',
+    width: 1200,
+    height: 800,
   },
+  liveUrl: 'https://house-price-prediction-sepia.vercel.app/',
+  year: 2025,
+  featured: true,
+},
   {
     id: '5',
     slug: 'dagu-logistics-platform',
