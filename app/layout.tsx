@@ -1,10 +1,8 @@
-// app/layout.tsx
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
-import Navbar from '@/components/layout/navbar';
-import Footer from '@/components/layout/footer';
+import SiteChrome from '@/components/layout/site-chrome';
 import { ThemeProvider } from '@/components/theme-provider';
 
 const inter = Inter({
@@ -40,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable} data-scroll-behavior="smooth">
+    <html lang="en" className={inter.variable} data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className="flex min-h-screen flex-col font-sans">
         <Script
           id="theme-init"
@@ -59,9 +57,7 @@ export default function RootLayout({
           }}
         />
         <ThemeProvider>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <SiteChrome>{children}</SiteChrome>
         </ThemeProvider>
       </body>
     </html>
