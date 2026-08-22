@@ -57,18 +57,29 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Bio */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/brand/logo-of-haxia.jpg"
-                alt="Haxia Technologies logo"
-                width={36}
-                height={36}
-                className="rounded-lg object-cover"
-              />
-              <span className="text-lg font-bold tracking-tight text-haxia-dark dark:text-white">
-                Haxia Technologies
-              </span>
-            </Link>
+               <Link href="/" className="flex items-center gap-2">
+  {/* Light mode logo — visible by default, hidden in dark mode */}
+  <Image
+    src="/brand/white-logo-1.png"
+    alt="Haxia Technologies logo"
+    width={100}
+    height={50}
+    className="rounded-lg object-cover dark:hidden"
+    priority
+  />
+  {/* Dark mode logo — hidden by default, visible in dark mode */}
+  <Image
+    src="/brand/dark-logo-1.png"
+    alt="Haxia Technologies logo"
+    width={100}
+    height={50}
+    className="hidden rounded-lg object-cover dark:block"
+    priority
+  />
+  {/* <span className="text-lg font-bold tracking-tight text-haxia-dark dark:text-white">
+    Haxia <span className="text-haxia-orange">Technologies</span>
+  </span> */}
+</Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-haxia-slate/60 dark:text-white/50">
               Haxia Technologies designs and engineers scalable digital
               products — from search platforms to enterprise dashboards —
