@@ -10,10 +10,17 @@ import ThemeToggle from '@/components/ui/theme-toggle';
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
-  { label: 'Portfolio', href: '/portfolio' },
-  { label: 'Team', href: '/#team' },
+  { label: 'Projects', href: '/portfolio' },
+  { label: 'Team', href: '/team' },
   { label: 'Contact', href: '/contact' },
 ];
+
+function isLinkActive(pathname: string, href: string) {
+  // Hash links (like /#team) aren't real routes — never mark them active
+  if (href.includes('#')) return false;
+  if (href === '/') return pathname === '/';
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,15 +69,28 @@ export default function Navbar() {
         </Link>
 
         <div className="hidden items-center gap-8 lg:flex">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-haxia-slate transition-colors hover:text-haxia-orange dark:text-white/70 dark:hover:text-haxia-orange"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const isActive = isLinkActive(pathname, link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? 'page' : undefined}
+                className={`relative text-sm font-medium transition-colors duration-200 ${
+                  isActive
+                    ? 'text-haxia-orange'
+                    : 'text-haxia-slate hover:text-haxia-orange dark:text-white/70 dark:hover:text-haxia-orange'
+                }`}
+              >
+                {link.label}
+                <span
+                  className={`absolute -bottom-1.5 left-0 h-0.5 w-full rounded-full bg-haxia-orange transition-transform duration-200 ${
+                    isActive ? 'scale-x-100' : 'scale-x-0'
+                  }`}
+                />
+              </Link>
+            );
+          })}
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">
@@ -119,15 +139,23 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col gap-1 border-t border-haxia-slate/10 bg-white px-6 py-4 dark:border-white/10 dark:bg-haxia-dark">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="rounded-md px-3 py-3 text-sm font-medium text-haxia-slate transition-colors hover:bg-haxia-orange/5 hover:text-haxia-orange dark:text-white/70 dark:hover:bg-white/5"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const isActive = isLinkActive(pathname, link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? 'page' : undefined}
+                className={`rounded-md px-3 py-3 text-sm font-medium transition-colors ${
+                  isActive
+                    ? 'bg-haxia-orange/10 text-haxia-orange'
+                    : 'text-haxia-slate hover:bg-haxia-orange/5 hover:text-haxia-orange dark:text-white/70 dark:hover:bg-white/5'
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <Link
             href="/contact"
             className="mt-2 inline-flex items-center justify-center rounded-lg bg-haxia-orange px-5 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-haxia-hover"

@@ -8,6 +8,17 @@
   --color-haxia-hover: #E07500;
   --color-haxia-dark: #121212;
   --color-haxia-slate: #1f2937;
+
+  --animate-marquee: marquee 80s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 html {

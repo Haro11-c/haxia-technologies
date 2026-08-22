@@ -1,18 +1,29 @@
-// components/modules/portfolio/portfolio.tsx
+// components/modules/portfolio/home-portfolio.tsx
 'use client';
 
 import Image from 'next/image';
 import { projects } from '@/data/projects';
 
-export default function Portfolio() {
+export default function HomePortfolio() {
   const loopProjects = [...projects, ...projects];
 
   return (
     <section
       id="portfolio"
-      className="relative overflow-hidden bg-white pb-24 pt-4 lg:pb-32 dark:bg-haxia-dark"
+      className="relative overflow-hidden bg-white py-24 lg:py-32 dark:bg-haxia-dark"
     >
-      <div className="group relative mt-6 w-full">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <span className="text-xs font-semibold uppercase tracking-wider text-haxia-orange">
+            Launch Record
+          </span>
+          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-haxia-dark sm:text-4xl dark:text-white">
+            Everything here is live and in production.
+          </h2>
+        </div>
+      </div>
+
+      <div className="group relative mt-16 w-full">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-white to-transparent dark:from-haxia-dark" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-white to-transparent dark:from-haxia-dark" />
 

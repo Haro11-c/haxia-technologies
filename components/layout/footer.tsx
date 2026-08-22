@@ -42,7 +42,7 @@ const SOCIAL_LINKS = [
     href: 'https://github.com',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-        <path d="M12 2C6.48 2 2 6.58 2 12.17c0 4.48 2.87 8.28 6.84 9.62.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27long 2.75 1.05a9.28 9.28 0 0 1 5 0c1.9-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.17C22 6.58 17.52 2 12 2z" />
+        <path d="M12 2C6.48 2 2 6.58 2 12.17c0 4.48 2.87 8.28 6.84 9.62.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.05a9.28 9.28 0 0 1 5 0c1.9-1.32 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.17C22 6.58 17.52 2 12 2z" />
       </svg>
     ),
   },
@@ -52,7 +52,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-haxia-dark text-white/70 dark:border-t dark:border-white/10">
+    <footer className="border-t border-haxia-slate/10 bg-white text-haxia-slate/70 dark:border-white/10 dark:bg-haxia-dark dark:text-white/70">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Bio */}
@@ -65,11 +65,11 @@ export default function Footer() {
                 height={36}
                 className="rounded-lg object-cover"
               />
-              <span className="text-lg font-bold tracking-tight text-white">
+              <span className="text-lg font-bold tracking-tight text-haxia-dark dark:text-white">
                 Haxia Technologies
               </span>
             </Link>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/50">
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-haxia-slate/60 dark:text-white/50">
               Haxia Technologies designs and engineers scalable digital
               products — from search platforms to enterprise dashboards —
               built for performance, reliability, and long-term growth.
@@ -82,7 +82,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/5 text-white/60 transition-colors duration-200 hover:bg-haxia-orange hover:text-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-haxia-slate/5 text-haxia-slate/60 transition-colors duration-200 hover:bg-haxia-orange hover:text-white dark:bg-white/5 dark:text-white/60"
                 >
                   {social.icon}
                 </a>
@@ -92,7 +92,7 @@ export default function Footer() {
 
           {/* Services Column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-haxia-dark dark:text-white">
               Services
             </h3>
             <ul className="mt-4 space-y-3">
@@ -100,7 +100,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/50 transition-colors duration-200 hover:text-haxia-orange"
+                    className="text-sm text-haxia-slate/60 transition-colors duration-200 hover:text-haxia-orange dark:text-white/50"
                   >
                     {link.label}
                   </Link>
@@ -111,7 +111,7 @@ export default function Footer() {
 
           {/* Company Column */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-haxia-dark dark:text-white">
               Company
             </h3>
             <ul className="mt-4 space-y-3">
@@ -119,7 +119,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/50 transition-colors duration-200 hover:text-haxia-orange"
+                    className="text-sm text-haxia-slate/60 transition-colors duration-200 hover:text-haxia-orange dark:text-white/50"
                   >
                     {link.label}
                   </Link>
@@ -131,16 +131,16 @@ export default function Footer() {
       </div>
 
       {/* Copyright Bar */}
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-6 text-xs text-white/40 sm:flex-row lg:px-8">
+      <div className="border-t border-haxia-slate/10 dark:border-white/10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-6 text-xs text-haxia-slate/50 sm:flex-row lg:px-8 dark:text-white/40">
           <p>
             &copy; {currentYear} Haxia Technologies. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/privacy" className="hover:text-white/70">
+            <Link href="/privacy" className="hover:text-haxia-orange dark:hover:text-white/70">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-white/70">
+            <Link href="/terms" className="hover:text-haxia-orange dark:hover:text-white/70">
               Terms of Service
             </Link>
           </div>

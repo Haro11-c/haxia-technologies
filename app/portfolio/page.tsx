@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Portfolio from '@/components/modules/portfolio/portfolio';
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Haxia Technologies',
+  title: 'Projects | Haxia Technologies',
   description:
     'Browse the full portfolio of platforms and products engineered by Haxia Technologies across search, enterprise tooling, and commerce.',
 };
@@ -18,7 +18,7 @@ export default function PortfolioPage() {
               Our Work
             </span>
             <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-haxia-dark sm:text-5xl dark:text-white">
-              Full Portfolio
+              Full Projects
             </h1>
             <p className="mt-4 text-base leading-relaxed text-haxia-slate/70 dark:text-white/60">
               Every platform we&apos;ve shipped, filterable by discipline.
@@ -26,7 +26,6 @@ export default function PortfolioPage() {
           </div>
         </div>
       </section>
-
       <Portfolio />
     </>
   );
