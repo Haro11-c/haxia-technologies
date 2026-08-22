@@ -55,18 +55,28 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/brand/logo-of-haxia.jpg"
-            alt="Haxia Technologies logo"
-            width={36}
-            height={36}
-            className="rounded-lg object-cover"
-            priority
-          />
-          <span className="text-lg font-bold tracking-tight text-haxia-dark dark:text-white">
-            Haxia <span className="text-haxia-orange">Technologies</span>
-          </span>
-        </Link>
+  {/* Light mode logo — visible by default, hidden in dark mode */}
+  <Image
+    src="/brand/white-logo-1.png"
+    alt="Haxia Technologies logo"
+    width={100}
+    height={50}
+    className="rounded-lg object-cover dark:hidden"
+    priority
+  />
+  {/* Dark mode logo — hidden by default, visible in dark mode */}
+  <Image
+    src="/brand/dark-logo-1.png"
+    alt="Haxia Technologies logo"
+    width={100}
+    height={50}
+    className="hidden rounded-lg object-cover dark:block"
+    priority
+  />
+  {/* <span className="text-lg font-bold tracking-tight text-haxia-dark dark:text-white">
+    Haxia <span className="text-haxia-orange">Technologies</span>
+  </span> */}
+</Link>
 
         <div className="hidden items-center gap-8 lg:flex">
           {NAV_LINKS.map((link) => {

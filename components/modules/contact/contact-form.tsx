@@ -67,20 +67,6 @@ export default function ContactForm() {
   return (
     <section id="contact" className="relative bg-white py-24 lg:py-32 dark:bg-haxia-dark">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Section header */}
-        <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-wider text-haxia-orange">
-            Get In Touch
-          </span>
-          <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-haxia-dark sm:text-4xl dark:text-white">
-            Let&apos;s Build Something Reliable
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-haxia-slate/70 dark:text-white/60">
-            Tell us about your project and our team will get back to you
-            within one business day.
-          </p>
-        </div>
-
         <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-5 lg:gap-16">
           {/* Left: office & contact info — already dark by design, no change needed */}
           <div className="lg:col-span-2">
